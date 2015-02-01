@@ -1,0 +1,33 @@
+﻿@model TeacherReviews.Models.Teacher
+
+
+<table class="table">
+ 
+    <tr>
+
+        <td>
+            Review
+        </td>
+        <td>
+            Reviewer
+        </td>
+
+    </tr>
+    @foreach (var item in Model.Reviews)
+    {
+        <tr>
+         
+            <td>
+                @Html.DisplayFor(modelItem => item.Review)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewerName)
+            </td>
+            <td>
+                @Html.RouteLink("remove","reviews_delete", new { id = item.Id, pid = Model.Id})
+            </td>
+            
+        </tr>
+    }
+
+</table>

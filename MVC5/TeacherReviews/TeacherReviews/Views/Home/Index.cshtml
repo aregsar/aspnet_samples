@@ -1,0 +1,25 @@
+﻿
+@model IEnumerable<TeacherReviews.Models.Teacher>
+@{
+    ViewBag.Title = "Teachers";
+}
+
+<h2>Teachers</h2>
+
+
+<table class="table">
+   
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItems => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Reviews", "Index", "Review", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>
